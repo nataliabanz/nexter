@@ -20,11 +20,11 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 80vh min-content 40vw repeat(4, min-content);
+  grid-template-rows: 80vh min-content 40vw repeat(2, min-content) 30vw min-content;
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
   @media only screen and (max-width: 62.5em) {
     .container {
-      grid-template-rows: 6rem 80vh min-content 40vw repeat(4, min-content);
+      grid-template-rows: 6rem 80vh min-content 40vw repeat(2, min-content) 30vw min-content;
       grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
   @media only screen and (max-width: 50em) {
     .container {
@@ -400,6 +400,22 @@ body {
   .gallery__item--14 {
     grid-row: 6 / 8;
     grid-column: 8 / 9; }
+
+.formular {
+  background-color: #f9f7f6;
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+  .formular__left {
+    background-image: linear-gradient(rgba(84, 72, 58, 0.8), rgba(84, 72, 58, 0.8)), url(../img/gal-8.jpeg);
+    background-size: cover;
+    background-position: center;
+    text-align: center; }
+  .formular__heading {
+    color: #fff; }
+  .formular__paragraph {
+    font-size: 1.8rem;
+    color: #fff; }
 
 .footer {
   background-color: #101d2c;
