@@ -1,7 +1,6 @@
 .header {
-    background-color: $color-grey-dark-1;
     grid-column: full-start / col-end 6;
-    background-image: linear-gradient(rgba($color-secondary, .93), rgba($color-secondary, .93)), url(../img/hero.jpeg);
+    background-image: linear-gradient(rgba($color-secondary, .93), rgba($color-secondary, .93)), url("../img/hero.jpeg") ;
     background-size: cover;
     background-position: center;
     padding: 8rem;
@@ -15,6 +14,7 @@
 
     @media only screen and (max-width: $bp-medium) {
         grid-column: 1 / -1;
+        grid-template-columns: minmax(min-content, max-content);
     }
 
     @media only screen and (max-width: $bp-small) {
@@ -26,7 +26,7 @@
         justify-self: center;
     }
 
-    &__btn {
+    &__button {
         align-self: start;
         justify-self: start;
     }
@@ -34,7 +34,7 @@
     &__seenon-text {
         display: grid;
         grid-template-columns: 1fr max-content 1fr;
-        grid-column-gap: 1.5rem;
+        grid-column-gap: 15px;
         align-items: center;
 
         font-size: 1.6rem;
@@ -55,7 +55,7 @@
         grid-column-gap: 3rem;
         justify-items: center;
         align-items: center;
-
+        
         img {
             max-height: 2.5rem;
             max-width: 100%;

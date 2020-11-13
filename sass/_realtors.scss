@@ -1,19 +1,18 @@
 .realtors {
     background-color: $color-secondary;
-    grid-column: col-start 7 / full-end;
-    padding: 3rem;
+    grid-column: col-end 6 / full-end;
 
     display: grid;
     align-content: center;
     justify-content: center;
-    justify-items: center;
     grid-row-gap: 2rem;
+    justify-items: center;
 
     @media only screen and (max-width: $bp-medium) {
         grid-column: 1 / -1;
     }
 
-    &__list {
+    &__person {
         display: grid;
         grid-template-columns: min-content max-content;
         grid-column-gap: 2rem;
@@ -26,6 +25,7 @@
 
         @media only screen and (max-width: $bp-small) {
             grid-template-columns: min-content max-content;
+            margin-bottom: 2rem;
         }
     }
 
@@ -36,8 +36,18 @@
     }
 
     &__sold {
-        text-transform: uppercase;
         color: $color-grey-light-2;
-        margin-top: -3px;
+        text-transform: uppercase;
+        margin-top: -2px;
+    }
+
+    &__heading-3 {
+
+        @media only screen and (max-width: $bp-small) {
+        
+            margin-top: 2rem;
+        }
+
     }
 }
+
