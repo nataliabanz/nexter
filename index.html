@@ -367,33 +367,41 @@
         </section>
 
         <section class="formular">
-            <div class="formular__left">
+            <div class="formular__picture">
                 <h2 class="formular__heading heading-2">How can we help?</h2>
                 <p class="formular__paragraph">We will answer in 24 hours!</p>
             </div>
-            <form action="#">
-                <h5 class="formular__title">Your name</h5>
-                <input type="text" name="username"  class="form__name" id="form__name">
-                
-                <h5 class="formular__title">Gender</h5>
-                <input type="radio" id="female" name="gender" value="f">
-                <label for="female" class="formular__sex">Female</label>
-                <input type="radio" id="male" name="gender" value="m">
-                <label for="male" class="formular__sex">Male</label>
-
-                <h5 class="formular__title">Tell us how can we contact you</h5>
-                <p class="formular__contact">Your email</p>
-                <input type="text" name="email">
-                <p class="formular__contact">Your phonenumber</p>
-                <input type="text" name="email">
-
-                <h5 class="formular__title">Ask your questions</h5>
-                
-
-            </form>
-            
+            <div class="formular__content">
+                <form class="formular__form" action="#">
+                    <div class="formular__form-user">
+                        <label for="name" class="formular__heading-5 heading-3">Your full name</label>
+                        <input type="text" name="username" placeholder="Full name" required class="formular__input" id="formular__name">
+                    </div>
+                    <div class="formular__form-gender">
+                        <div>
+                            <label for="gender" class="formular__title ">Gender</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="female" name="gender" value="f">
+                            <label for="female" class="formular__sex">Female</label>
+                            <input type="radio" id="male" name="gender" value="m">
+                            <label for="male" class="formular__sex">Male</label>
+                        </div>
+                    </div>
+                    <div class="formular__form-contact">
+                        <h5 class="formular__heading-5 heading-3">How can we contact you?</h5>
+                        <label for="phone" class="formular__title">Your phone number</label>
+                        <input type="text" name="phonenumber" placeholder="Phone number" required class="formular__input mb-sm"> 
+                        <label for="email" class="formular__title ">Your phone number</label>
+                        <input type="text" name="email" placeholder="Email adress" required class="formular__input"> 
+                    </div>
+                    <div class="formular__form-message">
+                        <label for="email" class="formular__title ">Ask your questions</label>                     
+                        <textarea name="comment" id="formular__comment" cols="20" rows="8" class="formular__input--big" placeholder="Please, ask you question here" required>Please, ask you question here</textarea> 
+                    </div>
+                </form>           
+            </div>
         </section>
-        
    
         <footer class="footer">
             <ul class="nav">
