@@ -20,11 +20,11 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 80vh min-content 40vw repeat(2, min-content) 40vw min-content;
+  grid-template-rows: 80vh min-content 40vw repeat(4, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
   @media only screen and (max-width: 62.5em) {
     .container {
-      grid-template-rows: 6rem 80vh min-content 40vw repeat(2, min-content) 30vw min-content;
+      grid-template-rows: 6rem 80vh min-content 40vw repeat(4, min-content);
       grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
   @media only screen and (max-width: 50em) {
     .container {
@@ -192,7 +192,8 @@ body {
     align-items: center; }
     @media only screen and (max-width: 50em) {
       .realtors__person {
-        grid-template-columns: repeat(3, min-content max-content); } }
+        grid-template-columns: repeat(3, min-content max-content);
+        margin-bottom: 2rem; } }
     @media only screen and (max-width: 37.5em) {
       .realtors__person {
         grid-template-columns: min-content max-content;
@@ -406,7 +407,10 @@ body {
   grid-column: full-start / full-end;
   margin: 5rem 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); }
+  @media only screen and (max-width: 50em) {
+    .formular {
+      grid-template-columns: 1fr; } }
   .formular__picture {
     background-image: linear-gradient(rgba(84, 72, 58, 0.8), rgba(84, 72, 58, 0.8)), url(../img/gal-3.jpeg);
     background-size: cover;
@@ -415,6 +419,9 @@ body {
     display: grid;
     justify-content: center;
     align-content: center; }
+    @media only screen and (max-width: 50em) {
+      .formular__picture {
+        background-image: none; } }
   .formular__content {
     background-color: #f9f7f6;
     padding: 5rem; }
@@ -427,23 +434,55 @@ body {
       width: 70%;
       margin-left: auto;
       margin-right: auto; }
+  .formular__radio--group {
+    display: flex;
+    width: 49%;
+    margin: 2rem 0; }
+  .formular__radio--input {
+    display: none; }
+  .formular__radio--label {
+    font-size: 10px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem; }
+  .formular__radio--button {
+    display: grid;
+    grid-row: 2;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 5px solid #c69963;
+    display: inline-block;
+    position: absolute;
+    top: -.8rem;
+    left: 0; }
+    .formular__radio--button::after {
+      content: '';
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #c69963;
+      opacity: 0;
+      transition: opacity .3s; }
+  .formular__radio--input:checked ~ .formular__radio--label .formular__radio--button::after {
+    opacity: 1; }
   .formular__title {
     text-align: center;
     font-size: 1.2rem;
     text-transform: uppercase;
     line-height: 1.6;
     margin: .5rem 0; }
-  .formular__heading {
-    color: #fff; }
-    .formular__heading-5 {
-      text-align: center; }
   .formular__input {
     padding: 1.5rem 2rem;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 1.6rem;
     border-radius: 5px;
     border: 1px solid #c69963;
-    font-size: 1rem;
+    font-size: 1.2rem;
     width: 100%;
     color: inherit;
     background-color: rgba(198, 153, 99, 0.2);
@@ -457,13 +496,27 @@ body {
       border-bottom: 2px solid #6D5D4B; }
     .formular__input::-webkit-input-placeholder {
       color: #B28451; }
-    .formular__input--big {
-      border-radius: 5px;
-      border: 1px solid #c69963; }
+  .formular__heading {
+    color: #fff; }
+    @media only screen and (max-width: 50em) {
+      .formular__heading {
+        color: #6D5D4B;
+        margin-top: 4rem; } }
+    .formular__heading-5 {
+      text-align: center; }
   .formular__paragraph {
     font-size: 1.8rem;
     color: #fff;
     text-align: center; }
+    @media only screen and (max-width: 50em) {
+      .formular__paragraph {
+        color: #6D5D4B;
+        margin-top: 2rem; } }
+  .formular__button {
+    width: 70%;
+    align-self: center;
+    justify-self: center;
+    border-radius: 5px; }
 
 .footer {
   background-color: #101d2c;

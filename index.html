@@ -382,10 +382,20 @@
                             <label for="gender" class="formular__title ">Gender</label>
                         </div>
                         <div>
-                            <input type="radio" id="female" name="gender" value="f">
-                            <label for="female" class="formular__sex">Female</label>
-                            <input type="radio" id="male" name="gender" value="m">
-                            <label for="male" class="formular__sex">Male</label>
+                            <div class="formular__radio--group">
+                                <input type="radio" class="formular__radio--input" id="small" name="size">
+                                <label for="small" class="formular__radio--label">
+                                    <span class="formular__radio--button"></span>
+                                    Male
+                                </label>
+                            </div>
+                            <div class="formular__radio-group">
+                                <input type="radio" class="formular__radio--input" id="large" name="size">
+                                <label for="large" class="formular__radio--label">
+                                    <span class="formular__radio--button"></span>
+                                    Female
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="formular__form-contact">
@@ -397,8 +407,9 @@
                     </div>
                     <div class="formular__form-message">
                         <label for="email" class="formular__title ">Ask your questions</label>                     
-                        <textarea name="comment" id="formular__comment" cols="20" rows="8" class="formular__input--big" placeholder="Please, ask you question here" required>Please, ask you question here</textarea> 
+                        <textarea name="comment" id="formular__comment" cols="20" rows="8" class="formular__input" placeholder="Please, ask you question here" required >Please, ask you question here</textarea> 
                     </div>
+                    <button class="btn formular__button">Send !</button>
                 </form>           
             </div>
         </section>

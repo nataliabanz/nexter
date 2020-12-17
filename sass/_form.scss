@@ -4,7 +4,11 @@
     margin: 5rem 0;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-columns: 1fr;
+    }
 
 
     &__picture {
@@ -12,6 +16,10 @@
         background-size: cover;
         background-position: center;
         width: 100%;
+
+        @media only screen and (max-width: $bp-medium) {
+            background-image: none;
+        }
        
         display: grid;
         justify-content: center;
@@ -39,65 +47,122 @@
         }
     }
 
+    &__radio {
+                    
+        &--group {
+            display: flex;
+            width: 49%;
+            margin: 2rem 0;
+        }
+              
+        &--input {
+            display: none;
+        }
+        &--label {
+            font-size: 10px;
+            cursor: pointer;
+            position: relative;
+            padding-left: 4.5rem;
+        }
+        &--button {
+            display: grid;
+            grid-row: 2;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            border: 5px solid $color-primary;
+            display: inline-block;
+            position: absolute;
+            top: -.8rem;
+            left: 0;
+
+            &::after {
+                content: '';
+                display: block;
+                height: 1.3rem;
+                width: 1.3rem;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: $color-primary;
+                opacity: 0;
+                transition: opacity .3s;
+            }
+        }    
+    }   
+
+    &__radio--input:checked ~ &__radio--label &__radio--button::after {
+        opacity: 1;
+    }
+
     &__title {
         text-align: center;
         font-size: 1.2rem;
         text-transform: uppercase;
         line-height: 1.6;
         margin: .5rem 0;
-
     }
 
-    &__heading {
-        color:#fff;
-
-        &-5 {
-            text-align: center;
-            
-        }
-    }
-
+    
     &__input {
         padding: 1.5rem 2rem;
         font-family: $font-display;
-        font-size: 1.6rem;
         border-radius: 5px;
         border: 1px solid $color-primary;
-        font-size: 1rem;
+        font-size: 1.2rem;
         width: 100%;
         color: inherit;
         background-color: rgba($color-primary, .2);
         display: block;
         transition: all .3s;
-
+        
         &:focus {
             outline: none;
             border-bottom: 2px solid $color-secondary;
             box-shadow: 0 1rem 2rem rgba($color-grey-dark-1, .2);
         }
-
+        
         &:focus:invalid {
             border-bottom: 2px solid $color-grey-dark-2;
         }
-
+        
         &::-webkit-input-placeholder {
             color: $color-primary-dark;
-        }
-     
-
-        &--big { 
-            border-radius: 5px;
-            border: 1px solid $color-primary;
-        }
-        
-
+        }             
     }
+
+    &__heading {
+        color:#fff;
+
+        @media only screen and (max-width: $bp-medium) {
+            color: $color-grey-dark-2;
+            margin-top: 4rem;
+        }
+
+        &-5 {
+            text-align: center;   
+        }
+    }
+
     &__paragraph {
         font-size: 1.8rem;
         color: #fff;
         text-align: center;
+        
+        @media only screen and (max-width: $bp-medium) {
+            color: $color-grey-dark-2;
+            margin-top: 2rem;
+        }
     }
-
+    
+    &__button {
+        width: 70%;
+        align-self: center;
+        justify-self: center;
+        border-radius: 5px;
+    }
 }
 
 
